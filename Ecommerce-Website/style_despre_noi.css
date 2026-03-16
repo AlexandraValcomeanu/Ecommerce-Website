@@ -1,0 +1,266 @@
+.cl {
+    height: 50px;
+    width: 100%;
+    background-color: black ;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    
+   }
+
+.cl1 {
+    background-color: rgb(251, 164, 208);
+    text-align: center;
+}  
+
+.cl2{
+    float: left;
+    margin-left: 20px;
+}
+   
+.im1{
+    display: block;
+    margin: auto;
+    width: 90%;
+    height: 450px;
+}
+
+.im2 {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    float: right;
+    margin-right: 30;
+    margin-top: 15px;
+}
+
+.im3{
+    opacity: 0.5;
+}
+
+h2{
+    color: white;
+    font-size: 27;
+    text-align: center;
+}
+
+button {
+    background-color: black;
+    color: beige;
+    margin-left: 30px;
+}
+
+h4{
+    margin: 15px;
+}
+
+label {
+  margin-left: 10px;
+}
+
+p{
+    font-size: 17;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.ul2{
+    background-color: black;
+    width: 100%;
+    
+}
+
+.ul1 {
+    list-style-type: none;
+    margin-top: 0;
+    overflow: hidden;
+    background-color:black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 47%;
+    
+   }
+
+.li1 { 
+    float: left;
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+   
+.aa {
+    color: white;
+    text-decoration: none;
+}
+   
+.form-control {
+    float: right;
+    margin-right: 20;
+    display: block;
+    width: 30%;
+    padding: 7px;
+    margin-top: 15px;
+    font-size: 15;
+    font-weight: 400;
+    line-height: 1;
+    background-color: rgb(254, 224, 243);
+    background-clip: padding-box;
+    border: var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+}
+
+body {
+    background-image: linear-gradient(black, #fcb4f0);
+    border: none;
+    margin: 0px;
+    
+}
+
+.footer {
+    background-color: #111; 
+    color: #fff; 
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+.footer-continut {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .footer h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f98adf; 
+  }
+
+  .footer p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #ccc; /* Gri deschis */
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links ul li {
+    margin: 5px 0;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #ddd; 
+    font-size: 15px;
+  }
+
+  .footer-links a:hover {
+    color: #f98adf;
+  }
+
+  .footer-newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-newsletter input {
+    padding: 10px;
+    border: 1px solid #444; 
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #222; 
+    color: #fff;
+  }
+
+  .footer-newsletter input::placeholder {
+    color: #888; 
+  }
+
+  .footer-newsletter button {
+    padding: 10px;
+    background-color: #e974c6; 
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .footer-newsletter button:hover {
+    background-color: #f494dd; 
+  }
+
+  .footer-copyright {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa; 
+    border-top: 1px solid #333; /* Linie de separare  */
+  }
+
+  /* celelalte pagini */
+.h1_titlu{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.subtitlu_h3{
+   margin-left: 120px;
+   font-size: 25px;
+}
+
+.chenar{
+    background: linear-gradient(#e488ea34,#ffffff27);
+    width: 1200px;
+    height: 1600px;
+    box-shadow: 0 8px 32px #0000008a;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 8px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.chenar p {
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.image-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.image-section img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.products-list img {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    margin-left:100;
+    margin-right: 100;
+}
+
+.products-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}

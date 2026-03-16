@@ -1,0 +1,145 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="cos.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  	 <title> A&D Cosmetics </title>
+     
+  </head>
+
+  <body >
+    <header class="cl1"> Transport gratuit la comenzile de peste 300 Ron</header>
+  	
+    <form role="search" class="cl">
+      <h2 class="cl2">A&D Cosmetics</h2>
+      <a href="cos_cumparaturi.html"> <img src="coscumparaturi.jpg" class="im2"> </a>
+      <a href="login.php"> <img src="login.jpg" class="im2"> </a>
+      <input type="search" class="form-control" placeholder="Search..." aria-label="search">
+    </form>
+
+    <div class="ul2"> <ul class="ul1">  
+      <li class="li1"><a class="aa" href="welcome.php">Home</a></li>
+      <li class="li1"><a class="aa" href="Machiaj.html">Machiaj</a></li>
+      <li class="li1"><a class="aa" href="Ingrijirea_Tenului.html">Îngrijirea Tenului</a></li>
+      <li class="li1"><a class="aa" href="Parfumuri.html">Parfumuri</a></li>
+     </ul> </div>
+	  
+  <main> 
+     <div class="chenar">
+        <h1 class="h1_titlu">Coș de cumpărături</h1>
+        <div class="cart">
+            
+          </div>
+          <div class="cart-summary">
+            <h3 class="h3_cos">Total: <span id="cart-total">0 RON</span></h3>
+            <button class="checkout-btn" ><a class="aa" href="finalizare_comanda.html">Finalizează comanda</a> </button>
+          </div>
+     </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-continut">
+      
+      <div class="footer-about">
+        <h3>Despre Noi</h3>
+        <p>La <strong>A&D Cosmetics</strong>, ne dedicăm să oferim produse cosmetice premium, perfecte pentru toate tipurile de piele. Descoperă frumusețea cu noi!</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Linkuri Utile</h3>
+        <ul>
+          <li><a href="despre_noi.html">Despre Noi</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="politica_de_conf.html">Politica de Confidențialitate</a></li>
+          <li><a href="Termeni_si_conditii.html">Termeni și Condiții</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3>Abonează-te la Newsletter</h3>
+        <p>Fii la curent cu ultimele noutăți și promoții exclusive!</p>
+        <form>
+          <input type="email" placeholder="Adresa ta de email" required>
+          <button type="submit">Abonează-te</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <p>&copy; 2025 A&D Cosmetics. Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <script>
+    const cartContainer = document.querySelector('.cart');
+    const cartTotalEl = document.getElementById('cart-total');
+    const checkoutBtn = document.querySelector('.checkout-btn');
+
+    // Funcție pentru a afișa produsele din coș
+    function displayCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cartContainer.innerHTML = '';
+      let total = 0;
+
+      cart.forEach((item) => {
+        total += item.price * item.quantity;
+
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+          <div class="item-info">
+            <img src="${item.image}" alt="${item.name}">
+            <div>
+              <h3>${item.name}</h3>
+              <p>Preț: ${item.price} RON</p>
+            </div>
+          </div>
+          <div class="item-quantity">
+            <button class="quantity-btn minus" data-id="${item.id}">-</button>
+            <span class="quantity">${item.quantity}</span>
+            <button class="quantity-btn plus" data-id="${item.id}">+</button>
+          </div>
+          <div class="item-total">${(item.price * item.quantity).toFixed(2)} RON</div>
+        `;
+
+        cartContainer.appendChild(cartItem);
+      });
+
+      cartTotalEl.textContent = `${total.toFixed(2)} RON`;
+      checkoutBtn.disabled = cart.length === 0;
+
+      addQuantityListeners();
+    }
+
+    // Funcție pentru a actualiza cantitatea
+    function addQuantityListeners() {
+      document.querySelectorAll('.quantity-btn').forEach((button) => {
+        button.addEventListener('click', function () {
+          const id = parseInt(this.dataset.id);
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const product = cart.find((item) => item.id === id);
+
+          if (this.classList.contains('plus')) {
+            product.quantity += 1;
+          } else if (this.classList.contains('minus') && product.quantity > 1) {
+            product.quantity -= 1;
+          } else {
+            cart = cart.filter((item) => item.id !== id);
+          }
+
+          localStorage.setItem('cart', JSON.stringify(cart));
+          displayCart();
+        });
+      });
+    }
+
+    // Afișăm produsele din coș la încărcarea paginii
+    displayCart();
+  </script>
+
+  </body>
+</html>
+
+
